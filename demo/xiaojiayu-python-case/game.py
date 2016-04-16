@@ -9,6 +9,8 @@ guess = 0
 print("不妨猜一下小甲鱼现在心里想的是哪个数字：", end=" ")
 while (guess != secret) and (times > 0):
     temp = input()
+    while not temp.isdigit():
+        temp = input("抱歉，您的输入有误，请输入一个整数：")
     guess = int(temp)
     times = times - 1 # 用户每输入一次，可用机会就-1
     if guess == secret:
