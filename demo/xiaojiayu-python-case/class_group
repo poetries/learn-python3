@@ -1,0 +1,17 @@
+#类组合例子
+
+class Turtle:
+    def __init__(self,x):
+        self.num = x
+
+class Fish:
+    def __init__(self,y):
+        self.num = y
+
+class Pool:
+    def __init__(self,x,y):
+        self.turtle = Turtle(x) #实例化一个对象turtle
+        self.fish = Fish(y)
+
+    def print_num(self):
+        print('水池里总共有乌龟%d只，小鱼%d 条！'%(self.turtle.num,self.fish.num))
