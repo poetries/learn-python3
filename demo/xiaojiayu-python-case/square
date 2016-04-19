@@ -1,0 +1,17 @@
+#写一个矩形
+
+class Rectangle:
+    def __init__(self,width = 0,height = 0):
+        self.width = width
+        self.height = height
+
+    def __setattr__(self,name,value):
+        if name == 'square':
+            self.width = value
+            self.height = value
+        else:
+            #super()rn.__setattr__(name,value) #推荐  调用基类
+            self.__dict__[name] = value #或者这样写也可以
+
+    def getArea(self):
+        return self.width * self.height
